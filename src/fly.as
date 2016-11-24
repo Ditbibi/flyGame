@@ -9,6 +9,7 @@ package
     import flash.events.Event;
     import flash.events.KeyboardEvent;
     import flash.events.MouseEvent;
+    import flash.media.Sound;
     
     import game.fly.config.Config;
     import game.fly.config.ConfigManager;
@@ -43,14 +44,15 @@ package
             stage.scaleMode = StageScaleMode.EXACT_FIT;
 //            stage.scaleMode = StageScaleMode.NO_BORDER;
 //            stage.scaleMode = StageScaleMode.NO_SCALE;
-            init();
+			this.addEventListener(Event.ADDED_TO_STAGE,init);
+//            init();
         }
         
         /**
          * 初始化Flash环境
          * 
          */		
-        private function init():void
+        private function init(evt:Event = null):void
         {
             //关联舞台
             runtime.stage = stage;
@@ -97,9 +99,11 @@ package
 			stage.addEventListener(Event.RESIZE, onResize);
 			onResize(null);
 			
-			var tmpSnd:MySound = new MySound();
-			tmpSnd.setSound("music.mp3", 0, 0);
-			tmpSnd.play();
+//			var tmpSnd:MySound = new MySound();
+//			tmpSnd.setSound("music.mp3", 0, 0);
+//			tmpSnd.play();
+//			var music:Sound = MediaSource.music;
+//			music.play();
         }
 		/**
 		 * @brief：处理居中

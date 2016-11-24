@@ -13,16 +13,16 @@ package game.fly.manage
 	public class MediaSource
 	{
 		//=============================配置文件=================================//
-//		[Embed(source="img/flyConfig.xml", mimeType="application/octet-stream")]
-//		private static var FlyConfig:Class;
-//		
-//		/**
-//		 * 配置文件的数据
-//		 */	
-//		public static function get flyXml():ByteArray
-//		{
-//			return new FlyConfig();
-//		}
+		[Embed(source="img/flyConfig.xml", mimeType="application/octet-stream")]
+		private static var FlyConfig:Class;
+		
+		/**
+		 * 配置文件的数据
+		 */	
+		public static function get flyXml():ByteArray
+		{
+			return new FlyConfig();
+		}
 		
 		//===============================飞机===================================//
 		[Embed(source="img/selfM1.png")]
@@ -273,9 +273,9 @@ package game.fly.manage
 		[Embed(source="sound/eatBox.mp3")]
 		private static var EatBox:Class;
 		
-//		/**
-//		 * 放背景音乐。
-//		 */	
+		/**
+		 * 放背景音乐。
+		 */	
 //		public static function get music():Sound
 //		{
 //			return new Music();

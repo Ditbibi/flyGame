@@ -62,10 +62,11 @@ package game.fly.config
 			Init();
 		}
 		public function Init():void{
-			var loader:URLLoader = new URLLoader(new URLRequest("flyConfig.xml"));
-			loader.dataFormat = URLLoaderDataFormat.TEXT;
-			loader.addEventListener(Event.COMPLETE,OnXmlComplete);
-			loader.addEventListener(IOErrorEvent.IO_ERROR,ErrorHandler);
+			OnXmlComplete(null);
+//			var loader:URLLoader = new URLLoader(new URLRequest("flyConfig.xml"));
+//			loader.dataFormat = URLLoaderDataFormat.TEXT;
+//			loader.addEventListener(Event.COMPLETE,OnXmlComplete);
+//			loader.addEventListener(IOErrorEvent.IO_ERROR,ErrorHandler);
 			
 //			var byteDataXml:ByteArray = MediaSource.flyXml;  
 //			var data:XML = XML(byteDataXml.readUTFBytes(byteDataXml.bytesAvailable));
@@ -98,10 +99,11 @@ package game.fly.config
 		 * xml下载完成
 		 */
 		private function OnXmlComplete(evt:Event):void{
-			var loader:URLLoader = URLLoader(evt.target);
-			loader.removeEventListener(Event.COMPLETE,OnXmlComplete);
-			loader.removeEventListener(IOErrorEvent.IO_ERROR,ErrorHandler);
-			var data:XML = XML(loader.data);
+//			var loader:URLLoader = URLLoader(evt.target);
+//			loader.removeEventListener(Event.COMPLETE,OnXmlComplete);
+//			loader.removeEventListener(IOErrorEvent.IO_ERROR,ErrorHandler);
+//			var data:XML = XML(loader.data);
+			var data:XML = XML(MediaSource.flyXml);
 			for each(var configXml:XML in data.child("config")){
 				life = configXml.attribute("life");
 				addLife = configXml.attribute("addlife");
